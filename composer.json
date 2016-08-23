@@ -1,0 +1,23 @@
+{
+    "name": "bright-tech/laravel-wechat-service",
+    "description": "微信SDK laravel ",
+    "type": "sdk",
+    "keywords": ["wechat","sdk","php"],
+    "license": "GNU GENERAL PUBLIC LICENSE",
+    "authors": [
+        {
+            "name": "BrightTech",
+            "email": "xiao.yanqi@bright-tech.cn"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*",
+        "bright-tech/wechat-php-sdk": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "bright_tech\\laravel\\wechat\\": "src/"
+        }
+    }
+}
