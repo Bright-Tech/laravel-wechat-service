@@ -13,8 +13,7 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.*",
-
-        "bright-tech/wechat-php-sdk": "dev-master@dev"
+        "bright-tech/wechat-php-sdk": "*"
     },
     "autoload": {
         "psr-4": {
