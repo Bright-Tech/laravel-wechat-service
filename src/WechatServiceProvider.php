@@ -1,9 +1,9 @@
 <?php
 namespace bright_tech\laravel\wechat;
 
-use bright_tech\wechat\Wechat;
-use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\ServiceProvider;
+use Cache;
 
 class WechatServiceProvider extends ServiceProvider
 {
@@ -27,9 +27,9 @@ class WechatServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Wechat::class, function ($app) {
+        $this->app->singleton(WechatService::class, function ($app) {
             $configWechat = config('wechat');
-            return new Wechat($configWechat['appid'], $configWechat['secret']);
+            return new WechatService($configWechat['appid'], $configWechat['secret'], Cache);
         });
     }
 }
