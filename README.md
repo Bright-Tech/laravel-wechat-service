@@ -45,9 +45,19 @@ php artisan vendor:publish
 
 
 ##使用
-
-
+###初始化
 ```php
-
-
+    public function getWechat( WechatService $wechatService ){
+    ...
+    }
+```
+###获取Access Token
+本Service会自动使用系统中设置的Cache组件缓存AccessToken
+```php
+    $wechatService->getAccessToken()
+```
+###发送微信请求
+具体可执行的方法请参考 [Wechat PHP SDK](https://github.com/Bright-Tech/wechat-php-sdk/)
+```php
+    $wechatService->getWechatClient()->sendTemplateMessage(...);
 ```
