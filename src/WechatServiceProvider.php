@@ -3,10 +3,10 @@ namespace bright_tech\laravel\wechat;
 
 
 use Illuminate\Support\ServiceProvider;
-use Cache;
 
 class WechatServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap any application services.
      *
@@ -29,7 +29,7 @@ class WechatServiceProvider extends ServiceProvider
     {
         $this->app->singleton(WechatService::class, function ($app) {
             $configWechat = config('wechat');
-            return new WechatService($configWechat['appid'], $configWechat['secret'], Cache);
+            return new WechatService($configWechat['appid'], $configWechat['secret'], \Cache::store());
         });
     }
 }

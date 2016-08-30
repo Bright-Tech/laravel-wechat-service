@@ -1,7 +1,6 @@
 <?php
 namespace bright_tech\laravel\wechat;
 
-use bright_tech\wechat\Wechat;
 use Illuminate\Support\Facades\Facade;
 
 
@@ -19,7 +18,7 @@ class WechatServiceFacade extends Facade
      * @return string
      */
     protected static function getFacadeAccessor() {
-        return 'WechatService';
+        return WechatService::class;
     }
 
 }
