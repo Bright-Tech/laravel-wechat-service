@@ -48,7 +48,7 @@ class WechatService
 
         if (!$cache->has('Wechat_AccessToken')) {
             $result = $this->getWechatClient()->getAccessToken();
-            $cache->put('Wechat_AccessToken', $result->accessToken, time() + $result->expiresIn/60 - 5);
+            $cache->put('Wechat_AccessToken', $result->accessToken, $result->expiresIn/60 - 5);
         }
 
         return $cache->get('Wechat_AccessToken');
